@@ -3,15 +3,17 @@
 # @Author: saitou
 # @Date:   2016-07-18 23:19:33
 # @Last Modified by:   Hideki Saito
-# @Last Modified time: 2016-07-22 13:57:29
+# @Last Modified time: 2016-07-22 15:15:44
 
 import sys
 
 from cliff.app import App
 from cliff.commandmanager import CommandManager
 
+import pbr.version
 
-VERSION = "1.0"
+
+version_info = pbr.version.VersionInfo('sc')
 
 
 class SlackClientCommand(App):
@@ -19,7 +21,7 @@ class SlackClientCommand(App):
     def __init__(self):
         super(SlackClientCommand, self).__init__(
             description='Slack Command-line Client',
-            version=VERSION,
+            version=version_info,
             command_manager=CommandManager('sc.cli'),
             deferred_help=True)
 
