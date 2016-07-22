@@ -2,7 +2,7 @@
 # @Author: saitou
 # @Date:   2016-07-18 13:30:49
 # @Last Modified by:   Hideki Saito
-# @Last Modified time: 2016-07-22 20:40:48
+# @Last Modified time: 2016-07-22 21:04:19
 
 from slackclient import SlackClient
 
@@ -62,7 +62,6 @@ class Client(object):
                                       user=id)
         if not result['ok']:
             return {}
-        print(result)
         data = {
             'id': result['user']['id'],
             'name': result['user']['name'],
