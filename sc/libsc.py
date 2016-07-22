@@ -2,7 +2,7 @@
 # @Author: saitou
 # @Date:   2016-07-18 13:30:49
 # @Last Modified by:   Hideki Saito
-# @Last Modified time: 2016-07-21 18:03:59
+# @Last Modified time: 2016-07-22 20:40:48
 
 from slackclient import SlackClient
 
@@ -62,11 +62,14 @@ class Client(object):
                                       user=id)
         if not result['ok']:
             return {}
+        print(result)
         data = {
             'id': result['user']['id'],
             'name': result['user']['name'],
-            'email': result['user']['profile']['email'],
-            'real_name': result['user']['profile']['real_name'],
+            'email': result['user']['profile'].get('email'),
+            'skype': result['user']['profile'].get('skype'),
+            'phone': result['user']['profile'].get('phone'),
+            'real_name': result['user']['profile'].get('real_name'),
             'tz': result['user']['tz'],
             'is_bot': result['user']['is_bot']
         }
