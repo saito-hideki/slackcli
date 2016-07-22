@@ -3,7 +3,7 @@
 # @Author: saitou
 # @Date:   2016-07-18 23:19:33
 # @Last Modified by:   Hideki Saito
-# @Last Modified time: 2016-07-19 21:10:34
+# @Last Modified time: 2016-07-22 13:57:29
 
 import sys
 
@@ -33,16 +33,6 @@ class SlackClientCommand(App):
         self.LOG.debug('clean_up %s', cmd.__class__.__name__)
         if err:
             self.LOG.debug('got an error: %s', err)
-
-    # def build_option_parser(self, description, version):
-    #     parser = super(SlackClientCommand, self).build_option_parser(
-    #         description,
-    #         version)
-    #     parser.add_argument(
-    #         '--token',
-    #         default=os.environ.get('SC_TOKEN'),
-    #         help='Defaults to env[SC_TOKEN] or None.')
-    #     return parser
 
 
 def main(argv=sys.argv[1:]):
