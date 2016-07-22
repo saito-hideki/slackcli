@@ -2,7 +2,7 @@
 # @Author: saitou
 # @Date:   2016-07-21 16:45:43
 # @Last Modified by:   Hideki Saito
-# @Last Modified time: 2016-07-22 20:41:16
+# @Last Modified time: 2016-07-22 20:50:42
 
 import logging
 import os
@@ -46,6 +46,8 @@ class MemberShow(ShowOne):
         data = (result['id'],
                 result['name'],
                 result['email'],
+                result['skype'],
+                result['phone'],
                 result['real_name'],
                 result['tz'],
                 result['is_bot'],
